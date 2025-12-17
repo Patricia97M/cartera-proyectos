@@ -34,6 +34,10 @@ h1 {
   font-size: 2rem;
   color: #232323;
   margin-inline: 2px;
+  @media screen and (max-width: 639px) {
+    font-size: 1.25rem !important;
+    font-weight: 600 !important;
+  }
 }
 button {
   cursor: pointer;

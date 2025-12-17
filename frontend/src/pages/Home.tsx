@@ -85,44 +85,80 @@ const Home = () => {
             Crear Proyecto
           </button>
         </div>
-        <table className="projects-table">
-          <thead>
-            <tr>
-              <th>ID</th>
-              <th>Nombre</th>
-              <th>Descripción</th>
-              <th>Estado</th>
-              <th className="column-action">Acciones</th>
-            </tr>
-          </thead>
-          <tbody>
+        <div className="projects-table-container">
+          <table className="projects-table">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Descripción</th>
+                <th>Estado</th>
+                <th className="column-action">Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              {projects.map((project, index) => (
+                <tr key={index}>
+                  <td>{project.id}</td>
+                  <td>{project.name}</td>
+                  <td>{project.description}</td>
+                  <td>
+                    <Switch
+                      key={`switch-${project.id}`}
+                      id={`switch-${project.id}`}
+                      isOn={project.status === "enabled"}
+                      handleToggle={() =>
+                        handleToggle(project.id, project.status)
+                      }
+                    />
+                  </td>
+                  <td className="column-action">
+                    <button
+                      className="btn-delete"
+                      onClick={() => handleDelete(project.id)}
+                    >
+                      <i className="material-icons">delete</i>
+                    </button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+          <div className="projects-cards">
             {projects.map((project, index) => (
-              <tr key={index}>
-                <td>{project.id}</td>
-                <td>{project.name}</td>
-                <td>{project.description}</td>
-                <td>
+              <div className="project-card" key={index}>
+                <div className="card-row">
+                  <span>ID:</span> {project.id}
+                </div>
+                <div className="card-row">
+                  <span>Nombre:</span> {project.name}
+                </div>
+                <div className="card-row">
+                  <span>Descripción:</span> {project.description}
+                </div>
+                <div className="card-row">
+                  <span>Estado:</span>
                   <Switch
-                    key={`switch-${project.id}`}
-                    id={`switch-${project.id}`}
+                    key={`switch-card-${project.id}`}
+                    id={`switch-card-${project.id}`}
                     isOn={project.status === "enabled"}
                     handleToggle={() =>
                       handleToggle(project.id, project.status)
                     }
                   />
-                </td>
-                <td className="column-action">
+                </div>
+                <div className="card-actions">
                   <button
                     className="btn-delete"
                     onClick={() => handleDelete(project.id)}
                   >
                     <i className="material-icons">delete</i>
                   </button>
-                </td>
-              </tr>
+                </div>
+              </div>
             ))}
-          </tbody>
-        </table>
+          </div>
+        </div>
       </div>
     </>
   );
