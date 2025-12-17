@@ -1,25 +1,20 @@
 import React, { useState } from "react";
 import { useAuth } from "../hooks/useAuth";
-import { useNavigate } from "react-router-dom";
 import "./../styles/page/Login.css";
 
 const Login: React.FC = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const { login, authState } = useAuth();
-  const navigate = useNavigate();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     await login(email, password);
-    if (!authState.error) {
-      navigate("/projects");
-    }
   };
 
   return (
     <div className="login-container">
-      <form className="login-form" onSubmit={handleSubmit}>
+      <form className="login-form">
         <div className="form-group">
           <label htmlFor="email">Email</label>
           <input
@@ -45,7 +40,11 @@ const Login: React.FC = () => {
             <p className="error-message">{authState.error}</p>
           </div>
         )}
-        <button type="submit" className="btn btn-primary btn-full">
+        <button
+          type="button"
+          className="btn btn-primary btn-full"
+          onClick={handleSubmit}
+        >
           Iniciar sesión
         </button>
       </form>
