@@ -12,7 +12,7 @@ const Login: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     await login(email, password);
-    if (!authState.error) {
+    if (authState.error !== null) {
       navigate("/projects");
     }
   };
