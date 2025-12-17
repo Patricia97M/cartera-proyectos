@@ -48,7 +48,7 @@ const CreateProjectModal: React.FC<CreateProjectModalProps> = ({
     return isNameValid && isDescriptionValid;
   };
 
-  const onSubmit = async () => {
+  const handleCreateProject = async () => {
     if (validateForm()) {
       await createProject({ ...form });
       closeModal();
@@ -125,7 +125,7 @@ const CreateProjectModal: React.FC<CreateProjectModalProps> = ({
           type="button"
           className="btn btn-primary"
           disabled={disabled}
-          onClick={onSubmit}
+          onClick={handleCreateProject}
         >
           Crear Proyecto
         </button>

@@ -28,7 +28,6 @@ const Home = () => {
     }
   };
   const handleDelete = (id: number) => {
-    // Lógica para eliminar el proyecto
     setIsDeleteModalOpen(true);
     selectProject(id);
   };
