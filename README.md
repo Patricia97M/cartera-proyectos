@@ -2,7 +2,7 @@
 
 ## Descripción
 
-Cartera de Proyectos es una aplicación web diseñada para gestionar proyectos de manera eficiente. Incluye un backend desarrollado en Python con Flask, una base de datos SQL para el almacenamiento de datos, y un frontend construido con React, TypeScript y Vite. La aplicación permite a los usuarios crear, editar estado y eliminar proyectos. Cuenta con un login simple para simular la autenticación de usuario y la obtención de sus proyectos.
+Cartera de Proyectos es una aplicación web diseñada para gestionar proyectos. Incluye un backend desarrollado en Python con Flask, una base de datos SQL para el almacenamiento de datos, y un frontend construido con React, TypeScript y Vite. La aplicación permite a los usuarios crear, editar estado y eliminar proyectos. Cuenta con un login simple para simular la autenticación de usuario y la obtención de sus proyectos.
 
 ## Características principales
 
