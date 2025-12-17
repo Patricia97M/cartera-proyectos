@@ -38,7 +38,7 @@ Cartera de Proyectos es una aplicación web diseñada para gestionar proyectos. 
    windows:
 
    ```bash
-   docker-compose up --build
+   docker compose up --build
    ```
 
    linux:
