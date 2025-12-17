@@ -13,6 +13,7 @@ const Home = () => {
     selectProject,
     fetchProjects,
     updateStatusProject,
+    setProjects,
   } = useProjects();
 
   const { logout, authState } = useAuth(); // Hook para manejar el deslogueo y obtener el usuario
@@ -30,6 +31,12 @@ const Home = () => {
   const handleDelete = (id: number) => {
     setIsDeleteModalOpen(true);
     selectProject(id);
+  };
+
+  const handleLogout = () => {
+    logout();
+    setProjects([]);
+    selectProject(null);
   };
 
   useEffect(() => {
@@ -50,7 +57,7 @@ const Home = () => {
         <div className="user-info">
           <span className="user-email">{authState.user?.email}</span>
         </div>
-        <button className="btn btn-logout" onClick={logout}>
+        <button className="btn btn-logout" onClick={handleLogout}>
           Cerrar Sesión
         </button>
       </header>

@@ -15,7 +15,7 @@ interface ProjectsContextProps {
   projects: IProject[];
   selectedProject: IProject | null;
   fetchProjects: () => void;
-  selectProject: (id: number) => void;
+  selectProject: (id: number | null) => void;
   createProject: (project: ICreatedProject) => void;
   updateStatusProject: (id: number, status: "enabled" | "disabled") => void;
   deleteProject: (id: number) => void;
@@ -25,6 +25,7 @@ interface ProjectsContextProps {
     message: string;
     type: "success" | "error";
   } | null;
+  setProjects: React.Dispatch<React.SetStateAction<IProject[]>>;
   setNotification: React.Dispatch<
     React.SetStateAction<{
       message: string;
@@ -68,7 +69,7 @@ export const ProjectsProvider: React.FC<{ children: React.ReactNode }> = ({
     }
   };
 
-  const selectProject = (id: number) => {
+  const selectProject = (id: number | null) => {
     const project = projects.find((p) => p.id === id) || null;
     setSelectedProject(project);
   };
@@ -160,6 +161,7 @@ export const ProjectsProvider: React.FC<{ children: React.ReactNode }> = ({
         isLoading,
         notification,
         setNotification,
+        setProjects,
       }}
     >
       {children}

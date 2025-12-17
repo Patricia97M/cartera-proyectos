@@ -34,9 +34,18 @@ Cartera de Proyectos es una aplicación web diseñada para gestionar proyectos. 
 ## Despliegue con Docker
 
 1. Construye y levanta los contenedores:
+   windows:
+
    ```bash
    docker-compose up --build
    ```
+
+   linux:
+
+   ```bash
+   sudo docker-compose up --build
+   ```
+
 2. Accede a la aplicación:
    - **Frontend:** `http://localhost:3000`
    - **Backend:** `http://localhost:4000`
