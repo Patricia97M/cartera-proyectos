@@ -1,0 +1,22 @@
+.tag-container {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  width: fit-content;
+}
+
+.tag--enabled {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.tag--disabled {
+  background-color: #d9d9d9;
+  color: #343434;
+}
+
+i.material-icons {
+  font-size: 8px;
+}

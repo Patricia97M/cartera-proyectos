@@ -1,0 +1,37 @@
+.btn {
+  padding: 8px 12px;
+  border-radius: 50px;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+.btn-primary {
+  background-color: rgb(0, 143, 21);
+  &:hover {
+    background-color: rgb(0, 123, 14);
+  }
+}
+.btn-secondary {
+  border: 1px solid #9ba8b3;
+  color: #6c757d;
+  &:hover {
+    background-color: #6c757d;
+    color: white;
+  }
+}
+.btn-danger {
+  background-color: #dc3545;
+  &:hover {
+    background-color: #a71d2a;
+  }
+}
+
+.btn-full {
+  width: 100%;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}

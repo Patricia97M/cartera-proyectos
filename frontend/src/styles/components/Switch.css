@@ -1,0 +1,42 @@
+.switch {
+  display: inline-block;
+  position: relative;
+  width: 50px;
+  height: 24px;
+}
+
+.switch-checkbox {
+  display: none; /* Ocultamos el checkbox */
+}
+
+.switch-label {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: #ccc;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  position: relative;
+}
+
+.switch-label .switch-button {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 18px;
+  height: 18px;
+  background-color: #fff;
+  border-radius: 50%;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.switch-checkbox:checked + .switch-label {
+  background-color: #4caf50; /* Color cuando está activado */
+}
+
+.switch-checkbox:checked + .switch-label .switch-button {
+  transform: translateX(26px); /* Mueve el botón al lado derecho */
+}

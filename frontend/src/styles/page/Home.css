@@ -1,0 +1,73 @@
+.projects-btn-container {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  width: 100%;
+}
+.projects-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  overflow: hidden; /* Asegura que los bordes redondeados se apliquen */
+}
+
+.projects-table th,
+.projects-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+.projects-table th {
+  background-color: #cecece;
+  font-weight: bold;
+}
+
+.projects-table thead tr {
+  border-radius: 8px; /* Bordes redondeados para el encabezado */
+}
+
+.projects-table tr:hover {
+  background-color: #f9f9f9;
+  cursor: pointer;
+}
+
+.column-action {
+  width: 100px;
+  text-align: center;
+}
+
+.btn-delete {
+  padding: 5px 10px;
+  margin: 0 5px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 10px;
+  border: 1px solid transparent;
+}
+
+.btn-delete {
+  color: #dc3545;
+  &:hover {
+    color: #a71d2a;
+    border: 1px solid #a71d2a;
+  }
+}
+
+i.material-icons {
+  font-size: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: rgba(7, 100, 21, 0.8);
+  color: white;
+  border-bottom: 1px solid #ddd;
+  width: 100vw;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+}
